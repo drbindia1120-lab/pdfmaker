@@ -51,7 +51,7 @@ const AddProductModal = ({ isOpen, onClose, onProductAdded }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!name || !price || !imageBase64) return;
+    if (!name || !imageBase64) return;
 
     setIsLoading(true);
     try {
@@ -123,7 +123,6 @@ const AddProductModal = ({ isOpen, onClose, onProductAdded }) => {
                 step="0.01"
                 onChange={(e) => setPrice(e.target.value)} 
                 placeholder="100.00"
-                required 
               />
             </div>
             <div className="flex-item">

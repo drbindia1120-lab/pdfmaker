@@ -52,13 +52,13 @@ app.post('/api/products', async (req, res) => {
   try {
     const { name, price, status, image } = req.body;
     
-    if (!name || !price || !image) {
-      return res.status(400).json({ message: 'Name, price, and image are required.' });
+    if (!name || !image) {
+      return res.status(400).json({ message: 'Name and image are required.' });
     }
 
     const newProduct = new Product({
       name,
-      price: Number(price),
+      price: price ? Number(price) : 0,
       status: status || 'IN STOCK',
       image
     });
